@@ -57,16 +57,7 @@ var Page = (function PageClosure() {
       return this.getPageProp('Contents');
     },
     get resources() {
-      // patch modesty's version of pdf.js with this commit from mozilla's pdf.js:
-      // https://github.com/mozilla/pdf.js/pull/4464/commits/1ddb0194494596b246fa151d089960f079b130fe
-      var value = this.getInheritedPageProp('Resources');
-      // For robustness: The spec states that a \Resources entry has to be
-      // present, but can be empty. Some document omit it still. In this case
-      // return an empty dictionary:
-      if (value === undefined) {
-        value = new Dict();
-      }
-      return shadow(this, 'resources', value);
+      return shadow(this, 'resources', this.inheritPageProp('Resources'));
     },
     get mediaBox() {
       var obj = this.inheritPageProp('MediaBox');
