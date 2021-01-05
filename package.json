@@ -1,7 +1,7 @@
 {
   "name": "pdf2json",
-  "version": "1.2.0",
-  "description": "A PDF file parser that converts PDF binaries to text based JSON, powered by porting a fork of PDF.JS to Node.js",
+  "version": "0.0.1",
+  "description": "Fork of Modesty Zhang's pdf2json",
   "keywords": [
     "pdf",
     "pdf parser",
@@ -16,14 +16,14 @@
     "pdf.js fork"
   ],
   "author": {
-    "name": "Modesty Zhang",
-    "email": "modestyz@hotmail.com",
-    "url": "http://www.codeproject.com/script/Articles/MemberArticles.aspx?amid=62372"
+    "name": "Community.lawyer, PBC",
+    "email": "hello@community.lawyer",
+    "url": "https://community.lawyer"
   },
-  "homepage": "https://github.com/modesty/pdf2json",
+  "homepage": "https://github.com/communitylawyer/pdf2json",
   "repository": {
     "type": "git",
-    "url": "git://github.com/modesty/pdf2json.git"
+    "url": "git://github.com/communitylawyer/pdf2json.git"
   },
   "main": "./pdfparser.js",
   "scripts": {
@@ -34,7 +34,7 @@
     "node": ">=10.15.1"
   },
   "bin": {
-    "pdf2json": "./bin/pdf2json"
+    "clpdf2json": "./bin/pdf2json"
   },
   "dependencies": {
     "async": "^3.2.0",
@@ -51,20 +51,20 @@
   ],
   "maintainers": [
     {
-      "name": "Modesty Zhang",
-      "email": "modestyz@hotmail.com",
-      "url": "http://www.codeproject.com/script/Articles/MemberArticles.aspx?amid=62372"
+      "name": "Community.lawyer, PBC",
+      "email": "hello@community.lawyer",
+      "url": "https://community.lawyer"
     }
   ],
   "contributors": [],
   "bugs": {
-    "url": "http://github.com/modesty/pdf2json/issues"
+    "url": "http://github.com/communitylawyer/pdf2json/issues"
   },
   "licenses": [
     {
       "type": "Apache v2",
-      "url": "https://github.com/modesty/pdf2json/blob/master/license.txt"
+      "url": "https://github.com/communitylawyer/pdf2json/blob/master/license.txt"
     }
   ],
-  "readme": "https://github.com/modesty/pdf2json/blob/master/readme.md"
+  "readme": "https://github.com/communitylawyer/pdf2json/blob/master/readme.md"
 }
