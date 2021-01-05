@@ -1,5 +1,5 @@
 {
-  "name": "@communitylawyer/clpdf2json",
+  "name": "@mhassin/clpdf2json",
   "version": "1.0.0",
   "description": "Fork of Modesty Zhang's pdf2json",
   "keywords": [
