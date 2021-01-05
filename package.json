@@ -1,6 +1,6 @@
 {
   "name": "clpdf2json",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Fork of Modesty Zhang's pdf2json",
   "keywords": [
     "pdf",
