@@ -1,5 +1,5 @@
 {
-  "name": "clpdf2json",
+  "name": "@communitylawyer/clpdf2json",
   "version": "1.0.0",
   "description": "Fork of Modesty Zhang's pdf2json",
   "keywords": [
@@ -15,11 +15,7 @@
     "PDF canvas",
     "pdf.js fork"
   ],
-  "author": {
-    "name": "Community.lawyer, PBC",
-    "email": "hello@community.lawyer",
-    "url": "https://community.lawyer"
-  },
+  "author": "Community.lawyer, PBC <hello@community.lawyer> (https://community.lawyer)",
   "homepage": "https://github.com/communitylawyer/pdf2json",
   "repository": {
     "type": "git",
@@ -43,18 +39,8 @@
     "xmldom": "^0.4.0"
   },
   "devDependencies": {},
-  "bundledDependencies": [
-    "xmldom",
-    "lodash",
-    "optimist",
-    "async"
-  ],
   "maintainers": [
-    {
-      "name": "Community.lawyer, PBC",
-      "email": "hello@community.lawyer",
-      "url": "https://community.lawyer"
-    }
+    "Community.lawyer, PBC <hello@community.lawyer> (https://community.lawyer)"
   ],
   "contributors": [],
   "bugs": {
@@ -66,5 +52,15 @@
       "url": "https://github.com/communitylawyer/pdf2json/blob/master/license.txt"
     }
   ],
-  "readme": "https://github.com/communitylawyer/pdf2json/blob/master/readme.md"
+  "bundleDependencies": [
+    "xmldom",
+    "lodash",
+    "optimist",
+    "async"
+  ],
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "license": "Apache-2.0"
 }
