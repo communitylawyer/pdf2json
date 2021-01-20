@@ -1,3 +1,7 @@
+> npm publish --access public
+
+> npm install @mhassin/clpdf2json -g
+
 # pdf2json
 
 pdf2json is a [node.js](http://nodejs.org/) module that parses and converts PDF from binary to json format, it's built with [pdf.js](https://github.com/mozilla/pdf.js/) and extends it with interactive form elements and text content parsing outside browser.
@@ -89,15 +93,15 @@ Alternatively, you can pipe input and output streams: (requires v1.1.4)
 ````javascript
     let fs = require('fs'),
         PDFParser = require("pdf2json");
-    
+
     let inputStream = fs.createReadStream("./pdf2json/test/pdf/fd/form/F1040EZ.pdf", {bufferSize: 64 * 1024});
     let outputStream = fs.createWriteStream("./pdf2json/test/target/fd/form/F1040EZ.json");
-    
+
     inputStream.pipe(new PDFParser()).pipe(new StringifyStream()).pipe(outputStream);
 ````
 See [p2jcmd.js](https://github.com/modesty/pdf2json/blob/master/lib/p2jcmd.js) for more details.
 
- 
+
 ## API Reference
 
 * events:
@@ -117,11 +121,11 @@ If success, event "pdfParser_dataReady" will be raised with output data object: 
 ````
 returns text in string.
 
-* Get all input fields information from "pdfParser_dataReady" event handler: 
+* Get all input fields information from "pdfParser_dataReady" event handler:
 ````javascript
         function getAllFieldsTypes();
-````        
-returns an array of field objects.         
+````
+returns an array of field objects.
 
 ## Output format Reference
 
@@ -707,11 +711,11 @@ Example of fields.json content:
 The fields.json output can be used to validate fields IDs with other data source, and/or to extract data value from user submitted PDFs.
 
 v0.6.8 added "-c" or "--content" command line argument to extract raw text content from PDF. It'll be a separated output file named as (pdf_file_name).content.txt.
-If all you need is the textual content of the PDF, "-c" essentially converts PDF to text, of cause, all formatting and styling will be lost.  
+If all you need is the textual content of the PDF, "-c" essentially converts PDF to text, of cause, all formatting and styling will be lost.
 
 ## Run Unit Test (commandline)
 
-It takes less than 1 minutes for pdf2json to parse 261 PDFs under `test/pdf` directory. Usually, it takes about 40 seconds or so to parses all of them. Besides the parimary JSON for each PDF, it also generates text content JSON and form fields JSON file (by `-c` and `-t` parameters) for further testing. 
+It takes less than 1 minutes for pdf2json to parse 261 PDFs under `test/pdf` directory. Usually, it takes about 40 seconds or so to parses all of them. Besides the parimary JSON for each PDF, it also generates text content JSON and form fields JSON file (by `-c` and `-t` parameters) for further testing.
 
 The 265 PDFs are all fill-able tax forms from government agencies for tax year 2013, including 165 federal forms, 23 efile instructions and 9 other state tax forms.
 
@@ -754,18 +758,18 @@ Some testing PDFs are provided by bug reporters, like the "unsupported encryptio
 ````
 	npm run-script test-misc
 ````
-  
+
 
 ## Upgrade to ~v1.x.x
 
-If you have an early version of pdf2json, please remove your local `node_modules` directory and re-run `npm install` to upgrade to pdf2json@1.0.x. 
+If you have an early version of pdf2json, please remove your local `node_modules` directory and re-run `npm install` to upgrade to pdf2json@1.0.x.
 
 v1.x.x upgraded dependency packages, removed some unnecessary dependencies, started to assumes ES6 / ES2015 with node ~v4.x. More PDFs are added for unit testing.
 
 **Note:**
 pdf2json has been in production for over 3 years, it's pretty reliable and solid when parsing hundreds (sometimes tens of thousands) of PDF forms every day, thanks to everybody's help.
 
-Starting v1.0.3, I'm trying to address a long over due annoying problem on [broken text blocks](https://github.com/modesty/pdf2json/issues/18). It's the biggest problem that hinders the efficiency of PDF content creation in our projects. Although the root cause lies in the original PDF streams, since the client doesn't render JSON character by character, it's a problem often appears in final rendered web content. We had to work around it by manually merge those text blocks. With the solution in v1.0.x, the need for manual text block merging is greately reduced.  
+Starting v1.0.3, I'm trying to address a long over due annoying problem on [broken text blocks](https://github.com/modesty/pdf2json/issues/18). It's the biggest problem that hinders the efficiency of PDF content creation in our projects. Although the root cause lies in the original PDF streams, since the client doesn't render JSON character by character, it's a problem often appears in final rendered web content. We had to work around it by manually merge those text blocks. With the solution in v1.0.x, the need for manual text block merging is greately reduced.
 
 The solution is to put to a post-parsing process stage to identify and auto-merge those adjacent blocks. It's not ideal, but works in most of my tests with those 261 PDFs underneath test directory.
 
@@ -797,7 +801,7 @@ $ sudo rm -f /usr/sbin/node
 $ sudo ln -s /usr/bin/nodejs /usr/sbin/node
 ```
 
-* Verify the version of node and installation 
+* Verify the version of node and installation
 
 ```
 $ which node
@@ -816,7 +820,7 @@ npm http 304 https://registry.npmjs.org/pdf2json
 /usr/bin/pdf2json -> /usr/lib/node_modules/pdf2json/bin/pdf2json
 pdf2json@0.6.1 /usr/lib/node_modules/pdf2json
 
-$ which pdf2json 
+$ which pdf2json
 /usr/bin/pdf2json
 
 $ pdf2json --version
