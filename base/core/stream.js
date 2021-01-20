@@ -610,6 +610,14 @@ var FlateStream = (function FlateStreamClosure() {
 
 var PredictorStream = (function PredictorStreamClosure() {
   function PredictorStream(str, params) {
+    // got an error where params.get was undefined --
+    // going to handle that case going off this: https://github.com/mozilla/pdf.js/blob/master/src/core/stream.js
+    if (!params) {
+      return str;
+    }
+    if (!(params.get)) {
+      return str;
+    }
     var predictor = this.predictor = params.get('Predictor') || 1;
 
     if (predictor <= 1)
