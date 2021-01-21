@@ -212,8 +212,10 @@ var ColorSpace = (function ColorSpaceClosure() {
         case 'CMYK':
           return 'DeviceCmykCS';
         case 'CalGray':
-          var params = cs[1].getAll();
-          return ['CalGrayCS', params];
+          if (cs[1] && cs[1].getAll) {
+            var params = cs[1].getAll();
+            return ['CalGrayCS', params];
+          }
         case 'CalRGB':
           return 'DeviceRgbCS';
         case 'ICCBased':
